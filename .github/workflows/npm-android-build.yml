@@ -1,4 +1,4 @@
-name: Build APK using NPM + Capacitor
+name: Build APK using Capacitor
 
 on:
   push:
@@ -22,10 +22,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build web assets
+      - name: Check Capacitor
+        run: npx cap doctor
+
+      - name: Build Web
         run: npm run build
 
-      - name: Install Capacitor Android
+      - name: Sync Android
         run: npx cap sync android
 
       - name: Build APK
