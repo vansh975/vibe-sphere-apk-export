@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -96,6 +97,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-social-background text-social-text;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+.card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(74, 111, 255, 0.1);
 }
